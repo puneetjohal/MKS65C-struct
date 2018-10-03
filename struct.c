@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 
 struct foo {char s[32]; int i;};
@@ -10,7 +11,7 @@ struct foo construct(){
   char strs[10][32] = {"anakin", "luke", "leia", "han", "r2d2", "c3po", "padme", "obi-wan", "yoda", "jango"};
   struct foo my_struct;
   my_struct.i = rand();
-  my_struct.s = strs[rand() % 10];
+  strcpy(my_struct.s, strs[rand() % 10]);
   return my_struct;
 }
 

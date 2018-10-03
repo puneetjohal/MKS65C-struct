@@ -2,6 +2,7 @@
 #import <stdlib.h>
 #import <time.h>
 
+/* too many errors
 struct conStructer(){
   char s[] = "abcdefghijklmnopqrstuvwxyz";
   char t[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -13,7 +14,7 @@ struct conStructer(){
   return my_type;
 }
 
-/*
+
 char accessor(struct s, char c){
   return struct.c;
 }
@@ -24,3 +25,4 @@ int main(){
   printf("Sample struct with two chars: %c, %c\n", sample.a, sample.b);
   return 0;
 }
+*/

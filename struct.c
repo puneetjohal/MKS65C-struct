@@ -13,12 +13,14 @@ struct conStructer(){
   return my_type;
 }
 
+/*
 char accessor(struct s, char c){
   return struct.c;
 }
+*/
 
 int main(){
   struct sample = conStructer();
-  printf("Sample struct with two chars: %c, %c\n", accessor(s,a), accessor(s,b));
+  printf("Sample struct with two chars: %c, %c\n", sample.a, sample.b);
   return 0;
 }

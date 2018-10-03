@@ -17,7 +17,7 @@ struct conStructer(){
 char accessor(struct s, char c){
   return struct.c;
 }
-*/
+
 
 int main(){
   struct sample = conStructer();

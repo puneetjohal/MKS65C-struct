@@ -1,28 +1,28 @@
-#import <stdio.h>
-#import <stdlib.h>
-#import <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-/* too many errors
-struct conStructer(){
-  char s[] = "abcdefghijklmnopqrstuvwxyz";
-  char t[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+struct foo {int i, char s[256];};
+
+struct foo constructer(){
   srand( time(NULL) );
-  int i = rand() % 27;
-  struct my_type {char a, char b};
-  my_type.a = *(s+i);
-  my_type.b = *(t+i);
-  return my_type;
+  char t[256] = {"fred, george, ron"};
+  struct foo my_struct;
+  my_struct.i = rand();
+  my_struct.s = t[rand() % 3];
+  return my_struct;
 }
 
-
+/*
 char accessor(struct s, char c){
   return struct.c;
 }
+*/
 
 
 int main(){
   struct sample = conStructer();
-  printf("Sample struct with two chars: %c, %c\n", sample.a, sample.b);
+  printf("Sample struct with int and string: %d, %s\n", sample.i, sample.s);
   return 0;
 }
-*/

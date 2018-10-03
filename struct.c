@@ -3,14 +3,14 @@
 #include <time.h>
 
 
-struct foo {int i, char s[256];};
+struct foo {char s[32]; int i;};
 
-struct foo constructer(){
+struct foo construct(){
   srand( time(NULL) );
-  char t[256] = {"fred, george, ron"};
+  char strs[10][32] = {"anakin, luke, leia, han, r2d2, c3po, padme, obi-wan, yoda, jango"};
   struct foo my_struct;
   my_struct.i = rand();
-  my_struct.s = t[rand() % 3];
+  my_struct.s = strs[rand() % 10];
   return my_struct;
 }
 
@@ -22,7 +22,7 @@ char accessor(struct s, char c){
 
 
 int main(){
-  struct sample = conStructer();
-  printf("Sample struct with int and string: %d, %s\n", sample.i, sample.s);
+  struct sample = construct();
+  printf("Sample struct with string and int: %s, %d\n", sample.s, sample.i);
   return 0;
 }

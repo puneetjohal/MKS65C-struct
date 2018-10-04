@@ -16,18 +16,14 @@ struct foo construct(){
   return my_struct;
 }
 
-char * printstr(struct foo s){
-  char * retstr;
-  strcpy(s.n, retstr);
-  strcat(retstr, " equipped with ");
-  strcat(retstr, s.w);
-  return *retstr;
+void printstr(struct foo s){
+  printf("%s equipped with %s\n", s.n, n.w);
 }
 
 
 
 int main(){
   struct foo sample = construct();
-  printf("%s\n", printstr(sample));
+  printstr(sample);
   return 0;
 }

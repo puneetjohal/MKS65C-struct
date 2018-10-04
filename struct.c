@@ -17,7 +17,7 @@ struct foo construct(){
 }
 
 void printstr(struct foo s){
-  printf("%s equipped with %s\n", s.n, n.w);
+  printf("%s equipped with %s\n", s.n, s.w);
 }
 
 

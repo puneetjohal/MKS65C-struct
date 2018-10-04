@@ -16,15 +16,15 @@ struct foo construct(){
   return my_struct;
 }
 
-/*
-char accessor(struct s, char c){
-  return struct.c;
+char * s printstr(struct foo s){
+  char * s = s.n + "equipped with" + s.w;
+  return s;
 }
-*/
+
 
 
 int main(){
   struct foo sample = construct();
-  printf("Name and weapon: %s, %s\n", sample.n, sample.w);
+  printf("%s\n", printstr(sample));
   return 0;
 }

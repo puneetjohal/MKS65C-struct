@@ -32,7 +32,8 @@ void changePower(struct foo s){
 //main for testing
 int main(){
   struct foo sample = construct();
-  srand( time(NULL) );
+  unsigned long xx = time(NULL);
+  srand( xx );
   printstr(sample);
   printf("--- change power ---\n");
   changePower(sample);

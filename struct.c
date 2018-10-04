@@ -24,7 +24,7 @@ void printstr(struct foo s){
   printf("%s equipped with %s with power level %d\n", s.n, s.w, s.i);
 }
 
-//modifies value of struct foo.i
+//modifies value of struct foo.i --> doesn't work?
 void changePower(struct foo s){
   s.i += 3;
 }
@@ -32,8 +32,7 @@ void changePower(struct foo s){
 //main for testing
 int main(){
   struct foo sample = construct();
-  unsigned long xx = time(NULL);
-  srand( xx );
+  srand( time(NULL) );
   printstr(sample);
   printf("--- change power ---\n");
   changePower(sample);

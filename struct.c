@@ -4,7 +4,7 @@
 #include <string.h>
 
 //struct foo prototype
-struct foo {char n[32]; char w[32]; int i};
+struct foo {char n[32]; char w[32]; int i;};
 
 //public String arrays
 char strs[10][32] = {"anakin", "luke", "leia", "han", "r2d2", "c3po", "padme", "obi-wan", "yoda", "jango"};
@@ -15,7 +15,7 @@ struct foo construct(){
   struct foo my_struct;
   strcpy(my_struct.n, strs[rand() % 10]); //name
   strcpy(my_struct.w, wpns[rand() % 6]); //weapon
-  my_struct.i = rand()
+  my_struct.i = rand();
   return my_struct;
 }
 

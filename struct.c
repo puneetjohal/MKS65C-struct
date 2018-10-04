@@ -10,12 +10,10 @@ struct foo {char n[32]; char w[32];};
 char strs[10][32] = {"anakin", "luke", "leia", "han", "r2d2", "c3po", "padme", "obi-wan", "yoda", "jango"};
 char wpns[6][32] = {"blue lightsaber", "green lightsaber", "red lightsaber", "purple lightsaber", "blaster", "bowcaster"};
 
-//seeding srand
-srand( time(NULL) );
-
 //returns an example struct
 struct foo construct(){}
   struct foo my_struct;
+  srand( time(NULL) );
   strcpy(my_struct.n, strs[rand() % 10]); //name
   strcpy(my_struct.w, wpns[rand() % 6]); //weapon
   return my_struct;

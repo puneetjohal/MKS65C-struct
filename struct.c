@@ -11,7 +11,7 @@ char strs[10][32] = {"anakin", "luke", "leia", "han", "r2d2", "c3po", "padme", "
 char wpns[6][32] = {"blue lightsaber", "green lightsaber", "red lightsaber", "purple lightsaber", "blaster", "bowcaster"};
 
 //returns an example struct
-struct foo construct(){}
+struct foo construct(){
   struct foo my_struct;
   strcpy(my_struct.n, strs[rand() % 10]); //name
   strcpy(my_struct.w, wpns[rand() % 6]); //weapon

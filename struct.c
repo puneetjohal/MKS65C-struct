@@ -17,8 +17,8 @@ struct foo construct(){
 }
 
 char * printstr(struct foo s){
-  char * s = s.n + "equipped with" + s.w;
-  return s;
+  char * retstr = s.n + "equipped with" + s.w;
+  return retstr;
 }
 
 

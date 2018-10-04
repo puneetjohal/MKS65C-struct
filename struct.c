@@ -10,9 +10,11 @@ struct foo {char n[32]; char w[32];};
 char strs[10][32] = {"anakin", "luke", "leia", "han", "r2d2", "c3po", "padme", "obi-wan", "yoda", "jango"};
 char wpns[6][32] = {"blue lightsaber", "green lightsaber", "red lightsaber", "purple lightsaber", "blaster", "bowcaster"};
 
+//seeding srand
+srand( time(NULL) );
+
 //returns an example struct
-struct foo construct(){
-  srand( time(NULL) );
+struct foo construct(){}
   struct foo my_struct;
   strcpy(my_struct.n, strs[rand() % 10]); //name
   strcpy(my_struct.w, wpns[rand() % 6]); //weapon
@@ -26,7 +28,6 @@ void printstr(struct foo s){
 
 //modifies value of struct foo.w randomly
 void switchWeapon(struct foo s){
-  srand( time(NULL) );
   //memset(s.w, '\0', sizeof(s.w)); //resets string
   strcpy(s.w, wpns[rand() % 6]);
 }

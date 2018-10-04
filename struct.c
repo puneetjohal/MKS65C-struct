@@ -4,7 +4,7 @@
 #include <string.h>
 
 //struct foo prototype
-struct foo {char n[32]; char w[32];};
+struct foo {char n[32]; char w[32]; int i};
 
 //public String arrays
 char strs[10][32] = {"anakin", "luke", "leia", "han", "r2d2", "c3po", "padme", "obi-wan", "yoda", "jango"};
@@ -15,18 +15,18 @@ struct foo construct(){
   struct foo my_struct;
   strcpy(my_struct.n, strs[rand() % 10]); //name
   strcpy(my_struct.w, wpns[rand() % 6]); //weapon
+  my_struct.i = rand()
   return my_struct;
 }
 
 //prints vars in struct
 void printstr(struct foo s){
-  printf("%s equipped with %s\n", s.n, s.w);
+  printf("%s equipped with %s with power level %d\n", s.n, s.w, s.i);
 }
 
-//modifies value of struct foo.w randomly
-void switchWeapon(struct foo s){
-  //memset(s.w, '\0', sizeof(s.w)); //resets string
-  strcpy(s.w, wpns[(rand() + 329471) % 6]);
+//modifies value of struct foo.i
+void changePower(struct foo s){
+  s.i += 3;
 }
 
 //main for testing
@@ -34,10 +34,10 @@ int main(){
   struct foo sample = construct();
   srand( time(NULL) );
   printstr(sample);
-  printf("--- switch weapons ---\n");
+  printf("--- change power ---\n");
   switchWeapon(sample);
   printstr(sample);
-  printf("--- switch weapons ---\n");
+  printf("--- change power ---\n");
   switchWeapon(sample);
   printstr(sample);
   return 0;

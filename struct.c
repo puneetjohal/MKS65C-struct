@@ -26,7 +26,7 @@ void printstr(struct foo s){
 //modifies value of struct foo.w randomly
 void switchWeapon(struct foo s){
   //memset(s.w, '\0', sizeof(s.w)); //resets string
-  strcpy(s.w, wpns[(rand() + 3294719823) % 6]);
+  strcpy(s.w, wpns[(rand() + 329471) % 6]);
 }
 
 //main for testing

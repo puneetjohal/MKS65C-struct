@@ -16,8 +16,8 @@ struct foo construct(){
   return my_struct;
 }
 
-char [] printstr(struct foo s){
-  char retstr[256];
+char * printstr(struct foo s){
+  char * retstr;
   strcpy(s.n, retstr);
   strcat(retstr, " equipped with ");
   strcat(retstr, s.w);

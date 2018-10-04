@@ -13,7 +13,6 @@ char wpns[6][32] = {"blue lightsaber", "green lightsaber", "red lightsaber", "pu
 //returns an example struct
 struct foo construct(){}
   struct foo my_struct;
-  srand( time(NULL) );
   strcpy(my_struct.n, strs[rand() % 10]); //name
   strcpy(my_struct.w, wpns[rand() % 6]); //weapon
   return my_struct;
@@ -32,6 +31,7 @@ void switchWeapon(struct foo s){
 
 //main for testing
 int main(){
+  srand( time(NULL) );
   struct foo sample = construct();
   printstr(sample);
   printf("--- switch weapons ---\n");

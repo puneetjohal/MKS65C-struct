@@ -4,14 +4,15 @@
 #include <string.h>
 
 
-struct foo {char s[32]; int i;};
+struct foo {char n[32]; char w[32];};
 
 struct foo construct(){
   srand( time(NULL) );
   char strs[10][32] = {"anakin", "luke", "leia", "han", "r2d2", "c3po", "padme", "obi-wan", "yoda", "jango"};
+  char wpns[6][32] = {"blue lightsaber", "green lightsaber", "red lightsaber", "purple lightsaber", "blaster", "bowcaster"};
   struct foo my_struct;
-  my_struct.i = rand();
-  strcpy(my_struct.s, strs[rand() % 10]);
+  strcpy(my_struct.n, strs[rand() % 10]); //name
+  strcpy(my_struct.w, wpns[rand() % 6]); //weapon
   return my_struct;
 }
 
@@ -24,6 +25,6 @@ char accessor(struct s, char c){
 
 int main(){
   struct foo sample = construct();
-  printf("Sample struct with string and int: %s, %d\n", sample.s, sample.i);
+  printf("Name and weapon: %s, %s\n", sample.n, sample.w);
   return 0;
 }

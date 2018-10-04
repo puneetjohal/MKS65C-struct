@@ -27,13 +27,16 @@ void printstr(struct foo s){
 //modifies value of struct foo.w randomly
 void switchWeapon(struct foo s){
   srand( time(NULL) );
-  strcpy(s.w, "\0"); //resets string
+  memset(s.w, 0, sizeof(s.w)); //resets string
   strcpy(s.w, wpns[rand() % 6]);
 }
 
 //main for testing
 int main(){
   struct foo sample = construct();
+  printstr(sample);
+  printf("--- switch weapons ---\n");
+  switchWeapon(sample);
   printstr(sample);
   printf("--- switch weapons ---\n");
   switchWeapon(sample);

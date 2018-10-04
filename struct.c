@@ -21,7 +21,7 @@ char * printstr(struct foo s){
   strcpy(s.n, retstr);
   strcat(retstr, " equipped with ");
   strcat(retstr, s.w);
-  return retstr;
+  return *retstr;
 }
 
 

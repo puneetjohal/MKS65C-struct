@@ -25,8 +25,9 @@ void printstr(struct foo s){
 }
 
 //modifies value of struct foo.i
-void changePower(struct foo * s){
-  s->i += 3;
+void changeWeapon(struct foo * s){
+  strcpy(s->w, ""); //resets string
+  strcpy(s->w, wpns[rand() % 6]);
 }
 
 //main for testing

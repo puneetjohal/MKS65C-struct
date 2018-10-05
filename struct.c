@@ -4,7 +4,7 @@
 #include <string.h>
 
 //struct foo prototype
-struct foo {char n[32]; char w[32]; int i;};
+struct foo {char n[32]; char w[32];};
 
 //public String arrays
 char strs[10][32] = {"anakin", "luke", "leia", "han", "r2d2", "c3po", "padme", "obi-wan", "yoda", "jango"};
@@ -15,16 +15,15 @@ struct foo construct(){
   struct foo my_struct;
   strcpy(my_struct.n, strs[rand() % 10]); //name
   strcpy(my_struct.w, wpns[rand() % 6]); //weapon
-  my_struct.i = rand();
   return my_struct;
 }
 
 //prints vars in struct
-void printstr(struct foo s){
-  printf("%s equipped with %s with power level %d\n", s.n, s.w, s.i);
+void printstr(struct foo * s){
+  printf("%s equipped with %s\n", s->n, s->w);
 }
 
-//modifies value of struct foo.i
+//modifies value of struct foo.w
 void changeWeapon(struct foo * s){
   strcpy(s->w, ""); //resets string
   strcpy(s->w, wpns[rand() % 6]);
@@ -32,15 +31,15 @@ void changeWeapon(struct foo * s){
 
 //main for testing
 int main(){
+  srand( time(NULL) );
   struct foo sample = construct();
   struct foo * p = &sample;
-  srand( time(NULL) );
-  printstr(sample);
-  printf("--- change power ---\n");
+  printstr(p);
+  printf("--- change weapon ---\n");
   changeWeapon(p);
-  printstr(sample);
-  printf("--- change power ---\n");
+  printstr(p);
+  printf("--- change weapon ---\n");
   changeWeapon(p);
-  printstr(sample);
+  printstr(p);
   return 0;
 }

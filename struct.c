@@ -20,7 +20,7 @@ struct foo construct(){
 
 //prints vars in struct
 void printstr(struct foo * s){
-  printf("%s equipped with %s\n", s->n, s->w);
+  printf("%s equipped with a %s\n", s->n, s->w);
 }
 
 //modifies value of struct foo.w

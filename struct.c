@@ -37,10 +37,10 @@ int main(){
   srand( time(NULL) );
   printstr(sample);
   printf("--- change power ---\n");
-  changePower(p);
+  changeWeapon(p);
   printstr(sample);
   printf("--- change power ---\n");
-  changePower(p);
+  changeWeapon(p);
   printstr(sample);
   return 0;
 }

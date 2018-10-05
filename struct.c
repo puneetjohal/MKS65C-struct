@@ -24,21 +24,22 @@ void printstr(struct foo s){
   printf("%s equipped with %s with power level %d\n", s.n, s.w, s.i);
 }
 
-//modifies value of struct foo.i --> doesn't work?
-void changePower(struct foo s){
-  s.i += 3;
+//modifies value of struct foo.i
+void changePower(struct foo * s){
+  s->i += 3;
 }
 
 //main for testing
 int main(){
   struct foo sample = construct();
+  struct foo * p = &sample;
   srand( time(NULL) );
   printstr(sample);
   printf("--- change power ---\n");
-  changePower(sample);
+  changePower(p);
   printstr(sample);
   printf("--- change power ---\n");
-  changePower(sample);
+  changePower(p);
   printstr(sample);
   return 0;
 }
